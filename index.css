@@ -56,6 +56,10 @@ a {
   color: var(--clr-dark);
   display: inline-block;
 }
+img {
+  /* border-left: 30px solid red; */
+  /* border-bottom: 30px solid red; */
+}
 button {
   border: none;
   outline: none;
