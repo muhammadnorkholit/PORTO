@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+}
+
+:root {
+  --clr-primary: #dd2549;
+  --clr-primary-light: #f34769;
+  --clr-dark: rgb(28, 29, 45);
+  --transition: all 0.3s;
+}
+
+/* global css */
+html {
+  background-color: white;
+}
+body {
+  font-family: Helvetica, sans-serif;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  width: 92%;
+  margin-inline: auto;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-dark);
+  display: inline-block;
+}
+.btn {
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  outline: none;
+  font-weight: 600;
+  text-transform: capitalize;
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -10%;
+  transition: var(--transition);
+  z-index: -1;
+  transform: skewX(15deg);
+}
+.btn-primary {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+.btn-primary:hover {
+  color: white;
+  border-color: var(--clr-primary-light);
+}
+.btn:hover::after {
+  left: -10%;
+  width: 120%;
+}
+
+.btn-primary::after {
+  background-color: var(--clr-primary);
+}
+/* navbar css */
+.navbar {
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: var(--transition);
+}
+.navbar,
+.navbar > .container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.navbar-brand {
+  font-size: 30px;
+  margin-right: 20px;
+}
+.navbar .nav-menu {
+  flex: 1;
+  transition: var(--transition);
+}
+.navbar-toggle {
+  display: none;
+  padding: 10px;
+}
+.nav-items .nav-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+  transition: var(--transition); /* Make sure --transition is defined */
+}
+.nav-items .nav-link.active,
+.nav-items .nav-link:hover {
+  border-bottom-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+/* navbar css end */
+
+/*awal  header */
+.header {
+  min-height: 100vh;
+}
+.header,
+.header > .container {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+.header-left,
+.header-right {
+  flex: 1;
+}
+.header-left > span {
+  font-weight: bold;
+}
+.header-left h1 span {
+  color: var(--clr-primary);
+}
+.header-left h1 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 3.2rem;
+  user-select: none;
+}
+.header-left h3 {
+  margin-bottom: 3px;
+}
+.header-left p {
+  margin-bottom: 10px;
+}
+.header-left .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+}
+.header-left .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.header-left .info-item:not(:last-child) {
+  border-right: 2px solid rgb(215, 215, 215);
+}
+.header-left .info-item span:first-child {
+  margin-bottom: 5px;
+}
+/*akhir header */
+
+@media (max-width: 880px) {
+  * {
+    letter-spacing: 0.2px;
+  }
+  .navbar,
+  .navbar > .container {
+    justify-content: space-between;
+  }
+  .navbar.active {
+    background-color: white;
+  }
+  .navbar .nav-menu {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    flex: auto;
+  }
+  .navbar .nav-menu.active {
+    height: 100vh;
+  }
+  .nav-items .nav-item {
+    display: flex;
+    flex-direction: column;
+    padding-block: 20px;
+    margin-right: 10px;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .header-left h1 {
+    margin-bottom: 7px;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    user-select: none;
+  }
+
+  .header-left h3 {
+    margin-bottom: 3px;
+  }
+  .header-left p {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .header-left,
+  .header-right {
+    flex: auto;
+    width: 100%;
+  }
+  .header-right {
+    margin-bottom: 20px;
+  }
+  .header-left h3 {
+    margin-bottom: 3px;
+  }
+  .header-left p {
+    margin-bottom: 10px;
+  }
+}
