@@ -19,12 +19,34 @@ html {
 body {
   font-family: Helvetica, sans-serif;
 }
+section {
+  padding-block: 2rem;
+  position: relative;
+}
+section::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  top: 0;
+  left: 30px;
+  background-color: var(--clr-border);
+}
 img {
   max-width: 100%;
 }
 .container {
   width: 92%;
   margin-inline: auto;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 10px;
 }
 ul {
   list-style: none;
@@ -33,6 +55,12 @@ a {
   text-decoration: none;
   color: var(--clr-dark);
   display: inline-block;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .btn {
   padding: 10px 20px;
@@ -43,6 +71,8 @@ a {
   position: relative;
   transition: var(--transition);
   overflow: hidden;
+  margin-top: 10px;
+  z-index: 1;
 }
 
 .btn::after {
@@ -89,6 +119,11 @@ a {
   gap: 10px;
   flex-wrap: wrap;
 }
+.navbar.active {
+  box-shadow: 0 2px 10px rgba(215, 215, 215, 0.6);
+
+  background-color: white;
+}
 .navbar-brand {
   font-size: 30px;
   margin-right: 20px;
@@ -125,13 +160,17 @@ a {
 .header,
 .header > .container {
   display: flex;
-  align-items: end;
+  /* align-items: end; */
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
 }
 .header-left,
 .header-right {
   flex: 1;
+}
+.header-right {
+  text-align: center;
 }
 .header-left > span {
   font-weight: bold;
@@ -173,17 +212,40 @@ a {
 }
 /*akhir header */
 
+/* awal about */
+.about {
+  background-color: rgb(242, 242, 243);
+}
+.about .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+:where(.about-left, .about-right) {
+  flex: 1;
+}
+.about-left {
+  text-align: center;
+}
+
+/* akhir about */
+
 @media (max-width: 880px) {
   * {
     letter-spacing: 0.2px;
+  }
+  .header {
+    min-height: 60vh;
+  }
+  section::before {
+    display: none;
   }
   .navbar,
   .navbar > .container {
     justify-content: space-between;
   }
-  .navbar.active {
-    background-color: white;
-  }
+
   .navbar .nav-menu {
     width: 100%;
     height: 0;
@@ -196,7 +258,7 @@ a {
   .nav-items .nav-item {
     display: flex;
     flex-direction: column;
-    padding-block: 20px;
+    padding-block: 7px;
     margin-right: 10px;
   }
   .navbar-toggle {
@@ -217,6 +279,9 @@ a {
   }
 }
 @media (max-width: 400px) {
+  .header {
+    min-height: 100vh;
+  }
   .header-left,
   .header-right {
     flex: auto;
@@ -230,5 +295,9 @@ a {
   }
   .header-left p {
     margin-bottom: 10px;
+  }
+  :where(.about-left, .about-right) {
+    flex: auto;
+    width: 100%;
   }
 }

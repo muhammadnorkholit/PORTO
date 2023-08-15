@@ -5,12 +5,17 @@ window.onload = () => {
   toggle.addEventListener("click", function () {
     let menu = document.querySelector(target);
     menu.classList.toggle("active");
+    if (menu.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
     if (!navbar.classList.contains("active")) navbar.classList.add("active");
-    else if (navbar.classList.contains("active") && window.scrollY < 100)
+    else if (navbar.classList.contains("active") && window.scrollY < 0)
       navbar.classList.remove("active");
   });
 
   window.onscroll = () => {
-    navbar.classList.toggle("active", window.scrollY > 100);
+    navbar.classList.toggle("active", window.scrollY > 0);
   };
 };

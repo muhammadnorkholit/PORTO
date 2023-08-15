@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTOFOLIO PROJECT</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,7 +19,8 @@
             <a class="navbar-brand">
                 MORTO
             </a>
-            <button id="toggle" data-toggle="collapse" class="navbar-toggle" data-target="#navbar">=</button>
+            <button id="toggle" data-toggle="collapse" class="navbar-toggle" data-target="#navbar"><i
+                    class="fa fa-bars"></i></button>
             <div class="nav-menu" id="navbar">
                 <ul class="nav-items">
                     <li class="nav-item "><a href="" class="nav-link active ">Beranda</a></li>
@@ -33,7 +37,7 @@
 
 
     <!-- awal header -->
-    <section class="header">
+    <section class="header" style="--clr-border:#dd2549">
         <div class="container">
             <div class="header-left">
                 <span>Halo ,</span>
@@ -41,8 +45,8 @@
                 <h3>Saya Web dan Mobile Developer</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus, rem explicabo quam amet
                     voluptatibus.</p>
-                <a href="" class="btn btn-primary">Kontak Saya</a>
-                <div class="info">
+                <a href="" class="btn btn-primary"><i class="fa fa-phone"></i> Hubungi Saya</a>
+                <!-- <div class="info">
                     <div class="info-item">
                         <span><b>Email</b></span>
                         <span>mnorkholit7@gmail.com</span>
@@ -55,14 +59,38 @@
                         <span><b>Location</b></span>
                         <span>Jawa Timur, Bondowoso</span>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="header-right">
-                <img src="images/header-image.jpg" alt="header-image">
+                <figure>
+                    <img src="images/header-image.png" alt="header-image">
+                </figure>
             </div>
         </div>
     </section>
     <!-- akhir header -->
+
+
+    <!-- awal about -->
+    <section class="about" style="--clr-border:black">
+        <div class="container">
+            <div class="about-left">
+                <figure>
+                    <img src="images/header-image.png" alt="header-image">
+                </figure>
+            </div>
+            <div class="about-right">
+                <h2>Tentang Saya</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos fugiat sunt numquam. Nobis, sequi
+                    eos? Officiis vitae natus ipsam!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, dignissimos eius quod excepturi
+                    asperiores et porro deserunt iste vel nam.</p>
+                <p>Lorem, ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, veniam.</p>
+                <a href="" class="btn btn-primary"><i class="fa fa-phone"></i> Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+    <!-- akhir about -->
 
 
     <script src="index.js"></script>
