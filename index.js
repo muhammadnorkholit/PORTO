@@ -21,7 +21,7 @@ window.onload = () => {
     var rect = el.getBoundingClientRect();
     var windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
-    var halfHeight = rect.height / 1.3; // Setengah tinggi elemen
+    var halfHeight = rect.height / 1.5; // Setengah tinggi elemen
     return (
       rect.top + halfHeight >= 0 && rect.bottom - halfHeight <= windowHeight
     );
@@ -37,7 +37,7 @@ window.onload = () => {
         s.classList.add("active");
       } else {
         // Elemen tidak ada dalam viewport
-        s.classList.remove("active");
+        // s.classList.remove("active");
       }
     });
   }

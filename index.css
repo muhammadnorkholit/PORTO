@@ -420,7 +420,8 @@ article .content {
   .header {
     min-height: 60vh;
   }
-  section::before {
+  section::before,
+  section::after {
     display: none;
   }
   .navbar,
