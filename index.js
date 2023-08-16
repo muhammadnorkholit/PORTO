@@ -2,6 +2,7 @@ window.onload = () => {
   let toggle = document.querySelector('[data-toggle="collapse"]');
   let navbar = document.querySelector(".navbar");
   let target = toggle.dataset.target;
+
   toggle.addEventListener("click", function () {
     let menu = document.querySelector(target);
     menu.classList.toggle("active");
@@ -46,4 +47,12 @@ window.onload = () => {
     navbar.classList.toggle("active", window.scrollY > 0);
     cekViewport();
   };
+
+  let mode = document.querySelectorAll(".mode");
+  mode.forEach((m) => {
+    m.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+      document.body.classList.toggle("light");
+    });
+  });
 };

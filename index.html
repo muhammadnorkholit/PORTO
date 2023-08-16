@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="effect1.css" media="(min-width:881px)">
+    <link rel="stylesheet" href="effect2.css" media="(max-width:880px)">
 </head>
 
-<body>
+<body class="dark">
 
     <!-- awal navbar -->
     <nav class="navbar">
@@ -19,8 +21,13 @@
             <a class="navbar-brand">
                 MORTO
             </a>
-            <button id="toggle" data-toggle="collapse" class="navbar-toggle" data-target="#navbar"><i
-                    class="fa fa-bars"></i></button>
+            <div class="" style="display: flex;"><button class="theme mobile mode" id="mode">
+                    <i class="fa fa-moon dark"></i>
+                    <i class="fa fa-sun light"></i>
+                </button>
+                <button id="toggle" data-toggle="collapse" class="navbar-toggle" data-target="#navbar"><i
+                        class="fa fa-bars"></i></button>
+            </div>
             <div class="nav-menu" id="navbar">
                 <ul class="nav-items">
                     <li class="nav-item "><a href="/" class="nav-link active ">Beranda</a></li>
@@ -29,15 +36,20 @@
                             Portofolio
                         </a></li>
                     <li class="nav-item"><a href="/" class="nav-link">Kontak Saya</a></li>
+
                 </ul>
             </div>
+            <button class="theme desktop mode" id="mode">
+                <i class="fa fa-moon dark"></i>
+                <i class="fa fa-sun light"></i>
+            </button>
         </div>
     </nav>
     <!-- akhir navbar -->
 
 
     <!-- awal header -->
-    <section class="header" style="--clr-border:#dd2549">
+    <section class="header" style="--clr-border:var(--clr-primary)">
         <div class="container">
             <div class="header-left">
                 <h1>Halo Saya Muhammad Nor <span>Kholit</span></h1>
@@ -101,7 +113,7 @@
             <div class="items">
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto3.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto3.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>
@@ -112,7 +124,7 @@
                 </div>
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto1.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto1.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>
@@ -123,7 +135,7 @@
                 </div>
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto2.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto2.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>
@@ -134,7 +146,7 @@
                 </div>
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto4.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto4.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>
@@ -145,7 +157,7 @@
                 </div>
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto5.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto5.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>
@@ -156,7 +168,7 @@
                 </div>
                 <div class="item">
                     <article>
-                        <figure> <img loading="lazy" src="images/porto6.jpg" alt=""></figure>
+                        <figure> <img loading="lazy" src="images/porto6.jpg" alt="porto-image"></figure>
                         <div class="content">
                             <h4>ELESPE</h4>
                             <p>Aplikasi manajemen penilaian siswa</p>

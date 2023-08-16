@@ -1,3 +1,6 @@
+/* @import url(effect1.css);
+@import url(effect2.css); */
+
 *,
 ::after,
 ::before {
@@ -11,14 +14,76 @@ html {
 }
 
 :root {
-  --clr-primary: #dd2549;
-  --clr-primary-light: #f34769;
+  --clr-primary: #25dd7e;
+  /* --clr-primary: #dd2549; */
+  --clr-primary-light: #47f39a;
+  /* --clr-primary-light: #f34769; */
   --clr-dark: rgb(28, 29, 45);
+  --clr-light: rgb(255, 255, 255);
   --clr-gray: rgb(242, 242, 243);
+  --clr-dark2: rgb(41, 42, 58);
+  /* --clr-text: white; */
+  --shadow: rgba(215, 215, 215, 0.6);
+  --shadow2: rgba(58, 53, 53, 0.6);
+
+  /* yang perlu di ubah jika mengubah tema */
+  --clr-text: var(--clr-light);
+  --clr-hover-text: var(--clr-light);
+  --bg2: var(--clr-dark2);
+  --theme: var(--clr-dark);
+  --clr-shadow-bar: var(--shadow2);
+
   --transition: all 0.3s;
+}
+.dark {
+  --clr-text: var(--clr-light);
+  --clr-hover-text: var(--clr-light);
+  --bg2: var(--clr-dark2);
+  --theme: var(--clr-dark);
+  --clr-shadow-bar: var(--shadow2);
+}
+.light {
+  --clr-text: var(--clr-dark);
+  --clr-hover-text: var(--clr-light);
+  --bg2: var(--clr-gray);
+  --theme: var(--clr-light);
+  --clr-shadow-bar: var(--shadow);
 }
 
 /* global css */
+.mobile {
+  display: none;
+}
+.theme {
+  width: 50px;
+  padding: 5px 10px;
+  color: var(--clr-text);
+  cursor: pointer;
+}
+.dark .theme .light {
+  display: none;
+}
+.light .theme .dark {
+  display: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a {
+  color: var(--clr-text);
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: var(--clr-text);
+  background-color: var(--theme);
+}
 figure {
   position: relative;
   z-index: 1;
@@ -36,38 +101,7 @@ article figure {
   width: 100%;
   overflow: hidden;
 }
-article .shape-left,
-article .shape-right {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  left: 0;
-  top: 0;
-  transition: var(--transition);
-  z-index: -1;
-}
-article .shape-left::after,
-article .shape-left::before,
-article .shape-right::after,
-article .shape-right::before {
-  width: 0%;
-  height: 0%;
-  transition: var(--transition);
-}
-article:hover .shape-left::after,
-article:hover .shape-right::after {
-  width: 50%;
-  height: 4px;
-}
-article:hover .shape-left::before,
-article:hover .shape-right::before {
-  width: 4px;
-  height: 50%;
-}
-article:hover {
-  background-color: #f34769;
-  color: white;
-}
+
 article img {
   transition: var(--transition);
 }
@@ -121,12 +155,6 @@ article:hover img {
   background-color: var(--clr-primary);
 }
 
-html {
-  background-color: white;
-}
-body {
-  font-family: Helvetica, sans-serif;
-}
 section {
   padding-block: 2rem;
   position: relative;
@@ -169,6 +197,7 @@ section.active::before {
 }
 img {
   max-width: 100%;
+  min-height: 100px;
 }
 .container {
   width: 92%;
@@ -227,7 +256,7 @@ button {
   color: var(--clr-primary);
 }
 .btn-primary:hover {
-  color: white;
+  color: var(--clr-hover-text) !important;
   border-color: var(--clr-primary-light);
 }
 .btn:hover::after {
@@ -256,14 +285,14 @@ button {
   flex-wrap: wrap;
 }
 .navbar.active {
-  box-shadow: 0 2px 10px rgba(215, 215, 215, 0.6);
-
-  background-color: white;
+  box-shadow: 0 2px 10px var(--clr-shadow-bar);
+  background-color: var(--theme);
 }
 .navbar-brand {
   font-size: 23px;
   margin-right: 20px;
   font-weight: bold;
+  color: var(--clr-text);
 }
 .navbar .nav-menu {
   flex: 1;
@@ -272,6 +301,7 @@ button {
 .navbar-toggle {
   display: none;
   padding: 10px;
+  color: var(--clr-text);
 }
 .nav-items .nav-item {
   display: inline-block;
@@ -281,6 +311,7 @@ button {
 .nav-link {
   border-bottom: 2px solid transparent;
   transition: var(--transition); /* Make sure --transition is defined */
+  color: var(--clr-text);
 }
 .nav-items .nav-link.active,
 .nav-items .nav-link:hover {
@@ -351,7 +382,7 @@ button {
 
 /* awal about */
 .about {
-  background-color: var(--clr-gray);
+  background-color: var(--bg2);
 }
 .about h1 {
   color: var(--clr-primary);
@@ -397,6 +428,12 @@ article .content {
 @media (max-width: 880px) {
   * {
     letter-spacing: 0.2px;
+  }
+  .mobile {
+    display: inline-block;
+  }
+  .desktop {
+    display: none;
   }
   figure {
     width: 90%;

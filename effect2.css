@@ -1,0 +1,68 @@
+article .shape-left,
+article .shape-right {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  left: 0;
+  top: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+article .shape-left::after,
+article .shape-left::before,
+article .shape-right::after,
+article .shape-right::before {
+  width: 0%;
+  height: 0%;
+  transition: var(--transition);
+}
+article:hover .shape-left::after,
+article:hover .shape-right::after {
+  width: 50%;
+  height: 4px;
+}
+article:hover .shape-left::before,
+article:hover .shape-right::before {
+  width: 4px;
+  height: 50%;
+}
+
+article .shape-left::after {
+  left: auto;
+  right: -10px;
+}
+article:hover .shape-left::after {
+  left: -10px;
+  right: auto;
+}
+article .shape-left::before {
+  top: auto;
+  bottom: 0;
+}
+article:hover .shape-left::before {
+  top: -10px;
+  bottom: auto;
+}
+article .shape-right::after {
+  left: -10px;
+  right: auto;
+}
+article:hover .shape-right::after {
+  left: auto;
+  right: -10px;
+}
+article .shape-right::before {
+  top: -10px;
+  bottom: auto;
+}
+article:hover .shape-right::before {
+  top: auto;
+  bottom: -10px;
+}
+
+article:hover {
+  background-color: var(--clr-primary);
+}
+article:hover * {
+  color: var(--clr-hover-text) !important;
+}

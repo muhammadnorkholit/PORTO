@@ -1,0 +1,66 @@
+/* Bentuk kiri dan kanan */
+article .shape-left,
+article .shape-right {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  left: 0;
+  top: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+/* Bentuk sebelum dan sesudah */
+article .shape-left::after,
+article .shape-left::before,
+article .shape-right::after,
+article .shape-right::before {
+  width: 0%;
+  height: 0%;
+  transition: var(--transition);
+}
+
+/* Bentuk yang muncul saat dihover */
+article:hover .shape-left::after,
+article:hover .shape-right::after,
+article:hover .shape-left::before,
+article:hover .shape-right::before {
+  width: 100%;
+  height: 50%;
+}
+
+/* Penyesuaian bentuk pada elemen kiri */
+article .shape-left::after {
+  left: -10px;
+  right: auto;
+  top: auto;
+  bottom: 0;
+}
+article:hover .shape-left::after {
+  left: auto;
+  right: -10px;
+  bottom: auto;
+  top: -10px;
+}
+
+/* Penyesuaian bentuk pada elemen kanan */
+article .shape-right::after {
+  left: auto;
+  right: -10px;
+  top: -10px;
+  bottom: auto;
+}
+article:hover .shape-right::after {
+  left: -10px;
+  right: auto;
+  top: auto;
+  bottom: -10px;
+}
+
+/* Efek latar belakang dan teks saat dihover */
+article:hover {
+  background-color: var(--clr-primary);
+}
+article:hover * {
+  color: var(--clr-hover-text) !important;
+}
