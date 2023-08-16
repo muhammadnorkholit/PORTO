@@ -353,9 +353,7 @@ button {
   margin-bottom: 20px;
   color: var(--clr-primary);
 }
-article {
-  /* border: 3px solid var(--clr-primary); */
-}
+
 article .content {
   padding: 10px;
 }
@@ -365,6 +363,7 @@ article .content {
   * {
     letter-spacing: 0.2px;
   }
+
   .header {
     min-height: 60vh;
   }
@@ -407,6 +406,11 @@ article .content {
   .header-left p {
     margin-bottom: 10px;
   }
+
+  .portofolio .items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
 }
 @media (max-width: 400px) {
   .header {
@@ -429,5 +433,9 @@ article .content {
   :where(.about-left, .about-right) {
     flex: auto;
     width: 100%;
+  }
+  .portofolio .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
