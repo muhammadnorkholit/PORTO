@@ -15,7 +15,35 @@ window.onload = () => {
       navbar.classList.remove("active");
   });
 
+  // cek element ada di viewport
+  // Fungsi untuk memeriksa apakah elemen ada dalam viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    var windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    var halfHeight = rect.height / 1.3; // Setengah tinggi elemen
+    return (
+      rect.top + halfHeight >= 0 && rect.bottom - halfHeight <= windowHeight
+    );
+  }
+
+  // Contoh penggunaan
+
+  function cekViewport() {
+    var sect = document.querySelectorAll("section"); // Ganti dengan selektor elemen Anda
+    sect.forEach((s) => {
+      if (isElementInViewport(s)) {
+        // Elemen ada dalam viewport
+        s.classList.add("active");
+      } else {
+        // Elemen tidak ada dalam viewport
+        s.classList.remove("active");
+      }
+    });
+  }
+
   window.onscroll = () => {
     navbar.classList.toggle("active", window.scrollY > 0);
+    cekViewport();
   };
 };
