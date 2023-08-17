@@ -1,0 +1,19 @@
+.porto-detail {
+}
+.porto-detail .container {
+  width: 80%;
+}
+.porto-detail .thumnail {
+  aspect-ratio: 2/1;
+  max-width: 90%;
+  margin-inline: auto;
+  display: block;
+  margin-bottom: 2rem;
+}
+.porto-detail .info {
+  padding-bottom: 20px;
+}
+.porto-detail .date {
+  text-align: left;
+  font-size: medium;
+}
