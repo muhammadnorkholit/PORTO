@@ -1,11 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-
-export default function CardArticel({ img, title, shortDesc, slug, created }) {
+import { motion } from "framer-motion";
+import animation from "../utils";
+export default function CardArticel({
+  img,
+  title,
+  shortDesc,
+  slug,
+  created,
+  index,
+}) {
   return (
     <Link to={slug}>
-      <article>
+      <motion.article
+        initial={{ ...animation({ direction: "bottom" }).initial }}
+        whileInView={{ ...animation({ direction: "bottom" }).whileInView }}
+        viewport={{ ...animation({ direction: "bottom" }).viewport }}
+        transition={{
+          ...animation({ direction: "bottom", delay: index }).transition,
+        }}
+      >
         <figure>
           <img loading="lazy" src={img} alt="porto-image" />
         </figure>
@@ -18,7 +33,7 @@ export default function CardArticel({ img, title, shortDesc, slug, created }) {
         </div>
         <div className="shape-left"></div>
         <div className="shape-right"></div>
-      </article>
+      </motion.article>
     </Link>
   );
 }

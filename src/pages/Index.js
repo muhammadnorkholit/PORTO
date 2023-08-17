@@ -13,7 +13,8 @@ import CardArticel from "../components/CardArticel";
 import Axios from "../Axios";
 import formatApi from "../FormatApi";
 import Image from "../Image";
-
+import { motion } from "framer-motion";
+import animation from "../utils";
 const Main = () => {
   const [Portofolio, setPortofolio] = useState([]);
   useEffect(() => {
@@ -30,24 +31,61 @@ const Main = () => {
       >
         <div className="container">
           <div className="header-left">
-            <h1>
+            <motion.h1
+              initial={{ ...animation({ direction: "left" }).initial }}
+              whileInView={{ ...animation({ direction: "left" }).whileInView }}
+              viewport={{ ...animation({ direction: "left" }).viewport }}
+              transition={{ ...animation({ direction: "left" }).transition }}
+            >
               Halo Saya Muhammad Nor <span>Kholit</span>
-            </h1>
-            <h3>Saya Web dan Mobile Developer</h3>
-            <p>
+            </motion.h1>
+            <motion.h3
+              initial={{ ...animation({ direction: "left" }).initial }}
+              whileInView={{ ...animation({ direction: "left" }).whileInView }}
+              viewport={{ ...animation({ direction: "left" }).viewport }}
+              transition={{
+                ...animation({ direction: "left", delay: 1 }).transition,
+              }}
+            >
+              Saya Web dan Mobile Developer
+            </motion.h3>
+            <motion.p
+              initial={{ ...animation({ direction: "left" }).initial }}
+              whileInView={{ ...animation({ direction: "left" }).whileInView }}
+              viewport={{ ...animation({ direction: "left" }).viewport }}
+              transition={{
+                ...animation({ direction: "left", delay: 2 }).transition,
+              }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
               ducimus, rem explicabo quam amet voluptatibus.
-            </p>
-            <Link to={"/"} className="btn btn-primary">
-              <i className="fa fa-phone"></i> Hubungi Saya
-            </Link>
+            </motion.p>
+            <motion.span
+              initial={{ ...animation({ direction: "left" }).initial }}
+              whileInView={{ ...animation({ direction: "left" }).whileInView }}
+              viewport={{ ...animation({ direction: "left" }).viewport }}
+              transition={{
+                ...animation({ direction: "left", delay: 3 }).transition,
+              }}
+            >
+              <Link to={"/"} className="btn btn-primary">
+                <i className="fa fa-phone"></i> Hubungi Saya
+              </Link>
+            </motion.span>
           </div>
           <div className="header-right">
-            <figure>
+            <motion.figure
+              initial={{ ...animation({ direction: "right" }).initial }}
+              whileInView={{ ...animation({ direction: "right" }).whileInView }}
+              viewport={{ ...animation({ direction: "right" }).viewport }}
+              transition={{
+                ...animation({ direction: "right" }).transition,
+              }}
+            >
               <img loading="lazy" src={headerImg} alt="header-image" />
               <div className="shape-left"></div>
               <div className="shape-right"></div>
-            </figure>
+            </motion.figure>
           </div>
         </div>
       </section>
@@ -55,32 +93,58 @@ const Main = () => {
       <section className="about" style={{ "--clr-border": "black" }}>
         <div className="container">
           <div className="about-left">
-            <figure>
+            <motion.figure {...animation({ direction: "left" })}>
               <img loading="lazy" src={aboutImg} alt="header-image" />
               <div className="shape-left"></div>
               <div className="shape-right"></div>
-            </figure>
+            </motion.figure>
           </div>
           <div className="about-right">
-            <h1>
+            <motion.h1
+              initial={{ ...animation({ direction: "right" }).initial }}
+              whileInView={{ ...animation({ direction: "right" }).whileInView }}
+              viewport={{ ...animation({ direction: "right" }).viewport }}
+              transition={{
+                ...animation({ direction: "right" }).transition,
+              }}
+            >
               <i className="fa fa-circle-info"></i> Tentang Saya
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos
-              fugiat sunt numquam. Nobis, sequi eos? Officiis vitae natus ipsam!
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-              dignissimos eius quod excepturi asperiores et porro deserunt iste
-              vel nam.
-            </p>
-            <p>
-              Lorem, ipsum Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Iusto, veniam.
-            </p>
-            <Link to={"/"} className="btn btn-primary">
-              <i className="fa fa-phone"></i> Hubungi Saya
-            </Link>
+            </motion.h1>
+            <motion.div
+              initial={{ ...animation({ direction: "right" }).initial }}
+              whileInView={{ ...animation({ direction: "right" }).whileInView }}
+              viewport={{ ...animation({ direction: "right" }).viewport }}
+              transition={{
+                ...animation({ direction: "right", delay: 1 }).transition,
+              }}
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                quos fugiat sunt numquam. Nobis, sequi eos? Officiis vitae natus
+                ipsam!
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Magnam, dignissimos eius quod excepturi asperiores et porro
+                deserunt iste vel nam.
+              </p>
+              <p>
+                Lorem, ipsum Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Iusto, veniam.
+              </p>
+            </motion.div>
+            <motion.span
+              initial={{ ...animation({ direction: "right" }).initial }}
+              whileInView={{ ...animation({ direction: "right" }).whileInView }}
+              viewport={{ ...animation({ direction: "right" }).viewport }}
+              transition={{
+                ...animation({ direction: "right", delay: 2 }).transition,
+              }}
+            >
+              <Link to={"/"} className="btn btn-primary">
+                <i className="fa fa-phone"></i> Hubungi Saya
+              </Link>
+            </motion.span>
           </div>
         </div>
       </section>
@@ -98,6 +162,7 @@ const Main = () => {
               return (
                 <div className="item" key={i}>
                   <CardArticel
+                    index={i}
                     slug={"/porto/" + p.slug}
                     created={p?.createdAt}
                     title={p.title}
