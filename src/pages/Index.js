@@ -60,7 +60,7 @@ const Main = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
               ducimus, rem explicabo quam amet voluptatibus.
             </motion.p>
-            <motion.span
+            <motion.div
               initial={{ ...animation({ direction: "left" }).initial }}
               whileInView={{ ...animation({ direction: "left" }).whileInView }}
               viewport={{ ...animation({ direction: "left" }).viewport }}
@@ -71,7 +71,7 @@ const Main = () => {
               <Link to={"/"} className="btn btn-primary">
                 <i className="fa fa-phone"></i> Hubungi Saya
               </Link>
-            </motion.span>
+            </motion.div>
           </div>
           <div className="header-right">
             <motion.figure
@@ -133,7 +133,7 @@ const Main = () => {
                 elit. Iusto, veniam.
               </p>
             </motion.div>
-            <motion.span
+            <motion.div
               initial={{ ...animation({ direction: "right" }).initial }}
               whileInView={{ ...animation({ direction: "right" }).whileInView }}
               viewport={{ ...animation({ direction: "right" }).viewport }}
@@ -144,7 +144,7 @@ const Main = () => {
               <Link to={"/"} className="btn btn-primary">
                 <i className="fa fa-phone"></i> Hubungi Saya
               </Link>
-            </motion.span>
+            </motion.div>
           </div>
         </div>
       </section>
