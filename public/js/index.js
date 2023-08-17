@@ -10,11 +10,19 @@ window.onload = () => {
       const target = toggle?.dataset?.target;
       toggle.addEventListener("click", () => {
         const menu = document.querySelector(target);
+
+        if (!navbar.classList.contains("active")) {
+          navbar.classList.add("active");
+        } else if (
+          navbar.classList.contains("active") &&
+          menu.classList.contains("active")
+        ) {
+          navbar.classList.remove("active");
+        }
         menu.classList.toggle("active");
         document.body.style.overflow = menu.classList.contains("active")
           ? "hidden"
           : "auto";
-        navbar.classList.toggle("active", !navbar.classList.contains("active"));
       });
 
       // Mengubah kelas "active" pada navbar saat menggulir dan memanggil checkViewport
